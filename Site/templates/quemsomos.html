@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Estilos -->
+     <link rel="stylesheet" href="static\css\footer.css">
+    <link rel="stylesheet" href="static/css/style.css">
+    <title>Seja Mais</title>
+</head>
+<body>
+    <script src="static\js\cabecalho.js"></script>
+    <header id="header">
+        <div class="container"> 
+            <div class="flex">
+                <a href="/" class="logo">SEJA<b>MAIS</b></a>
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="/">ÍNICIO</a></li>
+                        <li><a href="/portaldoembu">PORTAL DO EMBU</a></li>
+                        <li><a href="/quemsomos">QUEM SOMOS</a></li>
+                        <li><a href="/contato">CONTATO</a></li>
+                    </ul>
+                </nav>
+                {% if nome_usuario %}
+                <div class="btn-contato">
+                    <a href="/meuperfil"><button class="ASSINE">{{ nome_usuario }}</button></a>
+                </div>
+            {% else %}
+                <div class="btn-contato">
+                    <a href="/login"><button class="ASSINE">ENTRE</button></a>
+                </div>
+            {% endif %}
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div><!-- Flex -->
+        </div> <!-- Container -->
+    </header>
+
+    <section class="banner">
+        <h1>A VOZ QUE <span>EMBU PRECISA</span></h1>
+    </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const header = document.querySelector('header');
+            const logo = document.querySelector('.logo');
+            const navMenu = document.getElementById('nav-menu');
+            const hamburger = document.getElementById('hamburger');
+        
+            // Adiciona um listener para o evento de scroll na janela
+            window.addEventListener("scroll", function(){
+                // Verifica se a página foi rolada para baixo
+                if (window.scrollY > 0) {
+                    header.classList.add('rolagem'); // Adiciona a classe 'rolagem' ao cabeçalho
+                    logo.classList.add('scroll'); // Adiciona a classe 'scroll' ao logo
+                    header.style.backgroundColor = '#fff'; // Adiciona fundo branco ao cabeçalho
+                    logo.style.color = '#000'; // Altera a cor do logo para preto
+                    // Altera a cor dos links no menu para preto
+                    document.querySelectorAll('header ul li a').forEach(link => {
+                        link.style.color = '#000';
+                        header.style.boxShadow = '0px 4px rgba(0, 0, 0, 0.10)';
+                    });
+                } else {
+                    header.classList.remove('rolagem'); // Remove a classe 'rolagem' do cabeçalho
+                    logo.classList.remove('scroll'); // Remove a classe 'scroll' do logo
+                    header.style.backgroundColor = 'transparent'; // Remove o fundo branco do cabeçalho
+                    logo.style.color = '#fff'; // Altera a cor do logo para branco
+                    // Altera a cor dos links no menu para branco
+                    document.querySelectorAll('header ul li a').forEach(link => {
+                        link.style.color = '#fff';
+                        header.style.boxShadow = 'none';
+                    });
+                }
+            });
+            
+            // Adiciona um listener para o evento de clique no hamburger menu
+            hamburger.addEventListener('click', function() {
+                navMenu.classList.toggle('active'); // Alternar a classe 'active' no menu de navegação
+            });
+        });
+    </script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+});
+
+</script>
+
+<section class="section2">
+    <div class="missao">
+        <h1>QUEM SOMOS NÓS</h1>
+           <p>O Seja Mais deu seus primeiros passos como uma chapa concorrente ao cargo de Grêmio Estudantil da Escola Estadual Márcia Ries, situada no Jardim Valo Verde, em Embu das Artes. Embora não tenha alcançado a vitória, essa jornada foi fundamental para percebermos a importância da voz dos alunos em um contexto democrático. Essa compreensão vai além das paredes da escola, reverberando em todos os aspectos da vida. A experiência nos ensinou não apenas sobre liderança e representação, mas também sobre a necessidade de participação ativa e engajamento cívico em qualquer comunidade.</p>
+        <!-- BOTÃO ASSINE JÁ -->
+        <form action="/botao_clicado", method="POST">
+            <button class="ASSINEvagas">NOSSO PLANO</button>
+        </form>
+    </div>
+    <div class="missao">
+        <h1>NOSSA MISSÃO</h1>
+        <p>Com base nessa convicção, o Seja Mais agora renasce com um novo e ambicioso 
+            propósito: ser um comunicador direto para os jovens de Embu das Artes, focando 
+            principalmente no Portal do Embu, um jornal diário que esclarece tudo o que acontece 
+            na cidade. 
+            Compreendemos que, atualmente, muitos cidadãos de nossa cidade, especialmente 
+            os jovens, enfrentam dificuldades para entender a realidade local. Identificar os 
+            candidatos aos cargos de prefeito e vereador é um grande desafio no contexto atual. 
+            Por isso, o Seja Mais surge para esclarecer essas questões com uma linguagem 
+            jovem e acessível, sendo um comunicador agradável e interessante para o leitor.</p>
+        <!-- BOTÃO ASSINE JÁ -->
+    </div>
+    <div class="ultimosempregos">
+        <h3>VAGAS DA SEMANA</h3>
+
+        <div class="vagas">
+            {% for titulo, diadavaga in vagas_formatadas %}
+            <div class="colunavaga">
+                {% if is_logged_in %}
+                <a href="/vagasdeemprego">{{ titulo }}</a>
+                {% else %}
+                <a href="/login">{{ titulo }}</a>
+                {% endif %}
+                <p>Atualizado em {{ diadavaga }}</p>
+            </div>
+            {% endfor %}
+            {% if is_logged_in %}
+            <form action="/vagasdeemprego" method="GET">
+                <button>Ver Mais</button>
+            </form>
+            {% else %}
+            <form action="/login" method="GET">
+                <button>Ver Mais</button>
+            </form>
+            {% endif %}
+        </div>    
+    </div>
+</section>
+
+
+
+
+
+<!-- <section class="maisturismo">
+    <h1>MAIS TURISMO</h1>
+    <div class="titulosmt">
+        <h1>CONHEÇA A CIDADE <br> DE EMBU DAS ARTES</h1>
+        <p>Veja os melhores lugares para se conhecer em Embu das Artes.</p>
+    </div>
+</section> -->
+
+<footer class="footer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2>Sobre Nós</h2>
+            <p>Somos a maior inspiração pro Jovem de Embu das Artes. A escola precisa de democracia.</p>
+        </div>
+        <div class="footer-section">
+            <h2>Navegação</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/portaldoembu">Portal do Embu</a></li>
+                <li><a href="/quemsomos">Quem Somos</a></li>
+                <li><a href="/contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Contato</h2>
+            <p>Email: sejamaias@gmail.com</p>
+            <p>Telefone: (00) 0000-0000</p>
+        </div>
+        <div class="footer-section">
+            <h2>Siga-nos</h2>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/oficialsejamais/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

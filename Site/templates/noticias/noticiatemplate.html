@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacina Universal Contra a Gripe</title>
+    <link rel="stylesheet" href="static\css\footer.css">
+    <link rel="stylesheet" href="static\css\cabecalho.css">
+    <link rel="stylesheet" href="static\css\inicio.css">
+    <link rel="stylesheet" href="static\css\style.css">
+</head>
+<body>
+  <header id="header">
+    <div class="container"> 
+        <div class="flex">
+            <a href="/" class="logo">SEJA<b>MAIS</b></a>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="/">ÍNICIO</a></li>
+                    <li><a href="/portaldoembu">PORTAL DO EMBU</a></li>
+                    <li><a href="/quemsomos">QUEM SOMOS</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+            {% if nome_usuario %}
+            <div class="btn-contato">
+                <a href="/meuperfil"><button class="ASSINE">{{ nome_usuario }}</button></a>
+            </div>
+        {% else %}
+            <div class="btn-contato">
+                <a href="/login"><button class="ASSINE">ENTRE</button></a>
+            </div>
+        {% endif %}
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div><!-- Flex -->
+    </div> <!-- Container -->
+</header>
+    <main>
+        <section class="headline">
+          <h1>POLÍTICA</h1>
+        </section>
+        <section class="article">
+          <section class="cabecalho">
+            <h1>Senado aprova reajustes salariais <br>para PF, RPF e Polícia Penal</h1>
+            <p>Cientistas desenvolveram uma vacina universal contra a gripe que promete proteção eficaz contra todas as cepas do vírus, com previsão de disponibilidade pública em dois anos.</p>       
+            <p class="redator">Escrito por Guilherme Araujo - Embu das Artes - 00/00/00 16h20 - Atualizado há 3 horas</p>
+          </section>
+
+            <img src="{{ url_for('static', filename='images/imagem_materia.jpg') }}" alt="">
+            <p>Em um avanço histórico para a medicina, uma equipe de cientistas anunciou a criação de uma vacina universal contra a gripe, capaz de proteger contra todas as cepas do vírus. A descoberta promete revolucionar a prevenção da gripe, uma doença que afeta milhões de pessoas em todo o mundo anualmente.</p>
+            <p>O estudo, liderado pelo renomado virologista Dr. Marcos Ribeiro, foi realizado ao longo de dez anos e envolveu pesquisadores de diversas partes do mundo. A nova vacina utiliza uma tecnologia inovadora de mRNA, semelhante à usada nas vacinas contra a COVID-19, mas com modificações específicas que permitem a detecção e neutralização de uma ampla gama de variantes do vírus da gripe.</p>
+            <p>Os ensaios clínicos, realizados em várias fases, mostraram resultados promissores, com uma eficácia de mais de 90% na prevenção da gripe. A vacina também demonstrou ser segura, com efeitos colaterais mínimos, comparáveis aos de vacinas convencionais.</p>
+            <br>
+            <h2>Expectativas e Impactos:</h2>
+            <p>A expectativa é que a nova vacina esteja disponível para o público dentro dos próximos dois anos, após a conclusão dos processos regulatórios. Especialistas de saúde pública celebraram o anúncio, destacando o impacto potencial na redução de mortes e hospitalizações relacionadas à gripe.</p>
+            <br>
+            <h2>Futuro da Vacinação:</h2>
+            <p>A comunidade científica está entusiasmada com as possibilidades que esta nova vacina abre, não apenas para a gripe, mas também como um modelo para futuras vacinas contra outros vírus de rápida mutação.</p>
+            <p>Esta descoberta marca um novo capítulo na ciência médica, trazendo esperança de um futuro onde pandemias de gripe sejam coisa do passado.</p>
+        </section>
+        <section class="related-news">
+            <h3>Notícias Relacionadas</h3>
+            <ul>
+                <li><a href="#">Tecnologia de mRNA: O Futuro das Vacinas</a></li>
+                <li><a href="#">História das Vacinas: Do Século XIX ao Século XXI</a></li>
+                <li><a href="#">A Importância da Vacinação em Massa</a></li>
+            </ul>
+        </section>
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer-container">
+          <div class="footer-section">
+              <h2>Sobre Nós</h2>
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam scelerisque.</p>
+          </div>
+          <div class="footer-section">
+              <h2>Navegação</h2>
+              <ul>
+                  <li><a href="/">Home</a></li>
+                  <li><a href="/portaldoembu">Portal do Embu</a></li>
+                  <li><a href="/quemsomos">Quem Somos</a></li>
+                  <li><a href="/contato">Contato</a></li>
+              </ul>
+          </div>
+          <div class="footer-section">
+              <h2>Contato</h2>
+              <p>Email: exemplo@dominio.com</p>
+              <p>Telefone: (00) 0000-0000</p>
+          </div>
+          <div class="footer-section">
+              <h2>Siga-nos</h2>
+              <div class="social-icons">
+                  <a href="#"><i class="fab fa-facebook-f"></i></a>
+                  <a href="#"><i class="fab fa-twitter"></i></a>
+                  <a href="#"><i class="fab fa-instagram"></i></a>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  line-height: 1.6;
+  background-color: #f4f4f4;
+}
+
+
+
+nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.main {
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.headline {
+  margin-top: 20px;
+}
+
+.headline h1 {
+  font-size: 2.5rem;
+  color: #591cf8;
+  margin-bottom: 20px;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}
+
+.article img {
+    display: block; /* Torna a imagem um elemento de bloco */
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
+    width: 100%; /* Ajusta a largura da imagem para 100% do contêiner pai */
+    max-width: 600px; /* Define a largura máxima da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    max-height: 400px; /* Define a altura máxima da imagem */
+    object-fit: cover; /* Garante que a imagem cubra a área */
+    margin-bottom: 50px; /* Espaçamento abaixo da imagem */
+    border-radius: 20px;
+}
+
+
+
+.headline h2 {
+  font-size: 1.5rem;
+  color: #591cf8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.article {
+  background: #fff;
+  padding: 110px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.article h1 {
+  font-size: 2.5rem;
+  color: black;
+  margin-bottom: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+}
+
+.article p {
+  margin-bottom: 20px;
+}
+
+.article .redator {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  color: #591cf8;
+}
+.article blockquote {
+  border-left: 5px solid #333;
+  padding-left: 15px;
+  color: #535353;
+  margin: 20px 0;
+}
+
+.article h2 {
+  margin-bottom: 10px;
+  color: rgb(32, 32, 32);
+  font-family: "Poppins", sans-serif;
+  font-weight: 650;
+}
+
+.article img {
+  max-width: 100%;
+  height: auto; /* Mantém a proporção da imagem */
+}
+
+.related-news {
+  background: #fff;
+  padding-left: 110px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.related-news h3 {
+  margin-bottom: 10px;
+  color: #591cf8;
+}
+
+.related-news ul {
+  list-style: none;
+}
+
+.related-news ul li {
+  margin-bottom: 10px;
+}
+
+.related-news h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;   
+}
+
+.related-news ul li a {
+  color: black;
+  font-family: "Poppins", sans-serif;
+  font-weight: 400; 
+  text-decoration: none;
+  border-bottom: 1px  #535353;
+}
+
+
+    </style>
+</body>
+</html>

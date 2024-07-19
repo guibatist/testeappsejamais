@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <!-- Cabeçalho -->
+    <link rel="stylesheet" href="static\css\login.css">
+    <link rel="stylesheet" href="static\css\footer.css">
+    <link rel="stylesheet" href="static\css\cabecalho.css">
+    <link rel="stylesheet" href="static\css\linkmachete.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script src="static\js\script.js"></script>
+    <!-- Cabeçalho -->
+    <script src="static\js\cabecalho.js"></script>
+    <header id="header">
+        <div class="container"> 
+            <div class="flex">
+                <a href="/" class="logo">SEJA<b>MAIS</b></a>
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="/">ÍNICIO</a></li>
+                        <li><a href="/portaldoembu">PORTAL DO EMBU</a></li>
+                        <li><a href="/quemsomos">QUEM SOMOS</a></li>
+                        <li><a href="/contato">CONTATO</a></li>
+                    </ul>
+                </nav>
+                <div class="btn-contato">
+                </div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div><!-- Flex -->
+        </div> <!-- Container -->
+    </header>
+    
+    <div class="login-container">
+        {% if mensagem %}
+        <p style="color: red;">{{ mensagem }}</p>
+        {% endif %}
+        <h2>AMBIENTE DO TRABALHADOR</h2>
+        <form action="/logintrabalhador" method="POST">
+            <div class="input-group">
+                <label for="username">Email:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+        <p>Não tem uma conta? <a href="/registro">Clique aqui</a> para criar.</p>
+        <p><a href="/logintrabalhador">Sou cliente</a></p>
+
+    </div>
+</body>
+</html>

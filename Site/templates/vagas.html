@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="static\css\cabecalho.css">
+  <link rel="stylesheet" href="static\css\vagas.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Página de Vagas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <script src="static\js\cabecalho.js"></script>
+    <header id="header" style="padding-bottom: 50px;">
+        <div class="container"> 
+            <div class="flex">
+                <a href="/" class="logo">SEJA<b>MAIS</b></a>
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="/">ÍNICIO</a></li>
+                        <li><a href="/portaldoembu">PORTAL DO EMBU</a></li>
+                        <li><a href="/quemsomos">QUEM SOMOS</a></li>
+                        <li><a href="/contato">CONTATO</a></li>
+                    </ul>
+                </nav>
+                {% if nome_usuario %}
+                <div class="btn-contato">
+                    <a href="/meuperfil"><button class="ASSINE">{{ nome_usuario }}</button></a>
+                </div>
+            {% else %}
+                <div class="btn-contato">
+                    <a href="/login"><button class="ASSINE">ENTRE</button></a>
+                </div>
+            {% endif %}
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div><!-- Flex -->
+        </div> <!-- Container -->
+    </header>
+    
+
+    <div class="container1">
+        <div class="search-form">
+            <form action="/vagasdeemprego" method="POST">
+                <label for="local">Local:</label>
+                <select name="local" id="local">
+                    <option value="" selected>Selecione o local</option>
+                    <option value="Embu das Artes">Embu das Artes</option>
+                    <option value="Itapecerica da Serra">Itapecerica da Serra</option>
+                    <option value="Taboão da Serra">Taboão da Serra</option>
+                    <option value="Híbrido">Híbrido</option>
+                    <option value="Remoto">Remoto</option>
+                </select>
+                <label for="tipo">Tipo:</label>
+                <select name="tipo" id="tipo">
+                    <option value="" selected>Selecione o tipo</option>
+                    <option value="JVP">Jovem Aprendiz</option>
+                    <option value="ESTG">Estágio</option>
+                    <option value="CLT">CLT</option>
+                </select>
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+    </div>
+    <div class="outros">
+        <h1 class="titleoutros">RESULTADOS</h1>
+        <div class="quadradosoutros-container">
+            {% for vaga in vagas %}
+            <div class="quadradooutros">
+                <a href="/maisdavaga/{{ vaga.titulo }}/{{ vaga.id }}" class="link-para-manchete">
+                    <h6 style="color: white;">{{ vaga.id}} </h6>
+                    <h3>{{ vaga.titulo }}</h3>
+                    <p>{{ vaga.resumo }}</p>
+                </a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    
+
+
+  <div class="job-listings">
+    <!-- Aqui serão gerados os quadrados de vagas dinamicamente -->
+    <div class="quadradosoutros-container">
+      <!-- Os quadrados serão adicionados dinamicamente aqui -->
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

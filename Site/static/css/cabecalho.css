@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+.separa {
+    margin-bottom: 70px;
+}
+body {
+    background-color: #fdfdfd;
+}
+
+
+
+/* Header */
+.container {
+	max-width: 1280px;
+	margin: auto;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.flex .logo {
+	color: #000000;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+header {
+	width: 100%;
+	padding: 60px 4%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: .5s;
+	height: 90px;
+    background-color: #fff;
+	padding: 20px 4%;
+	box-shadow:  0px 4px rgba(0, 0, 0, 0.10);
+	z-index: 1000;
+}
+
+header i {
+	font-size: 30px;
+	color: #000000;
+}
+
+header ul {
+	list-style-type: none;
+}
+
+header ul li {
+	display: inline-block;
+	margin: 0 40px;
+}
+
+header ul li a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.ASSINE {
+	width: 120px;
+	height: 40px;
+	border: 0;
+	border-radius: 35px;
+	background-color: #64e8ff;
+	color: #fff;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.banner {
+    height: calc(100vh - 20px); /* Define a altura do banner menos 20 pixels */
+    margin-bottom: -20px;
+	background-image: url(https://wallpapercave.com/wp/wp12488812.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.banner h1 {
+	font-size: 4em;
+	color: #fff;
+}
+
+.banner h1 span {
+	color: #64e8ff;
+}
+
+/* Respons. */
+@media screen and (max-width: 768px) {
+	.flex {
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header ul {
+		display: none;
+	}
+
+	.hamburger {
+		display: block;
+		cursor: pointer;
+	}
+
+	.hamburger span {
+		display: block;
+		width: 25px;
+		height: 3px;
+		background-color: #000;
+		margin: 5px 0;
+	}
+
+	#nav-menu.active ul,
+	#nav-menu.active .btn-contato {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		background-color: #fff;
+		position: absolute;
+		top: 90px;
+		left: 0;
+		right: 0;
+		box-shadow: 0px 4px rgba(0, 0, 0, 0.1);
+		z-index: 999;
+	}
+}
+
+

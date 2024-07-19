@@ -1,0 +1,567 @@
+/* Valores */
+.destaques {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 4%;
+}
+
+.titledest {
+    text-align:left; /* Centraliza o texto do título */
+    margin-bottom: 10px; /* Adiciona um espaço abaixo do título */
+    margin-left: 80px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    color: #4b17d1;
+}
+
+.quadradodest {
+    width: 400px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content:end; /* Alinha os itens no topo */
+    align-items:flex-start; /* Centraliza os itens horizontalmente */
+    padding: 20px;
+    margin: 10px; /* Adiciona espaço entre os quadrados */
+    text-align: left; /* Centraliza o texto dentro dos quadrados */
+}
+
+.quadradodest p {
+    text-align: left;
+}
+
+.destaques .quadrados-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os quadrados na linha */
+    gap: 20px; /* Espaçamento entre os quadrados */
+}
+
+/* #dest1 {
+
+}
+
+#dest2 {
+
+}
+
+#dest3 {
+
+} */
+
+.quadradodest {
+    text-align: center;
+}
+
+
+
+/* Hoje */
+.hoje {
+    display: flex;
+    flex-direction: column;
+    padding: 60px 4%;
+}
+
+.titlehj {
+    text-align: left; /* Alinha o texto do título à esquerda */
+    margin-bottom: 10px; /* Adiciona um espaço abaixo do título */
+    margin-left: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    color: #4b17d1;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: space-between; /* Espaça os itens principais */
+    flex-wrap: wrap; /* Permite que os itens sejam flexíveis em diferentes tamanhos de tela */
+}
+
+.maior {
+    position: relative; /* Adiciona posição relativa para poder posicionar o pseudo-elemento */
+    width: 700px;
+    height: 640px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: end; /* Alinha os itens no topo */
+    align-items: flex-start; /* Centraliza os itens horizontalmente */
+    padding: 20px;
+    margin: 10px; /* Adiciona espaço entre os quadrados */
+    text-align: left; /* Centraliza o texto dentro dos quadrados */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites da div */
+}
+
+.maior::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor escura com transparência */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo da div */
+    border-radius: 10px; /* Mesmo raio de borda para combinar com a div principal */
+}
+
+.maior h1, h3, p {
+    color: #ffffff;
+}
+.canto h1, h3, p {
+    color: #ffffff;
+}
+.canto-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre os elementos .canto */
+}
+
+.maior, .canto-container h3 {
+    font-size: 15px;
+}
+
+
+
+.canto {
+    position: relative; /* Adiciona posição relativa para poder posicionar o pseudo-elemento */
+    width: 700px;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinha os itens no final */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    padding: 20px;
+    z-index: 1;
+    margin: 10px; /* Adiciona espaço entre os quadrados */
+    text-align: left; /* Alinha o texto à esquerda */
+    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites da div */
+    background-size: cover; /* Ajusta a imagem para cobrir todo o espaço */
+    background-position: center; /* Centraliza a imagem */
+}
+
+.canto::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor escura com transparência */
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo da div */
+    border-radius: 10px; /* Mesmo raio de borda para combinar com a div principal */
+}
+
+@media (max-width: 1440px) {
+    .conteudo {
+        flex-direction: column; /* Altera para coluna em telas menores */
+    }
+
+    .titlehj {
+        text-align: center;
+    }
+
+    .maior,
+    .canto {
+        width: calc(100% - 20px); /* Ajusta a largura para 100% menos a margem */
+        height: auto; /* Ajusta a altura automaticamente */
+        margin: 10px auto; /* Centraliza horizontalmente com margem vertical */
+    }
+}
+
+
+/* Outros */
+.destaques {
+    margin-top: 100px;
+    display: flex;
+    flex-direction: column;
+    padding: 60px 4%;
+}
+
+.titledest {
+    text-align:left; /* Centraliza o texto do título */
+    margin-bottom: 10px; /* Adiciona um espaço abaixo do título */
+    margin-left: 80px;
+
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    color: #4b17d1;
+}
+
+.quadradodest {
+    width: 400px;
+    height: 500px;
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinha os itens no topo */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    padding: 20px;
+    margin: 10px; /* Adiciona espaço entre os quadrados */
+    text-align: center; /* Centraliza o texto dentro dos quadrados */
+    position: relative; /* Mantém os elementos filhos posicionados em relação ao quadrado */
+    overflow: hidden;
+    cursor: pointer;
+    position: relative; /* Define o contexto de empilhamento para os elementos filhos */
+    background-size: cover;
+    background-position: center;
+}
+
+.quadradodest::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* Ajuste a opacidade conforme necessário */
+    border-radius: 10px; /* Garante que o pseudo-elemento tenha as mesmas bordas arredondadas */
+    z-index: 1; /* Coloca o pseudo-elemento acima do conteúdo */
+}
+
+
+.quadradodest h1 {
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+
+.quadradodest p {
+    color: #ffffff;
+    position: relative;
+    z-index: 2;
+}
+.destaques .quadrados-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os quadrados na linha */
+    gap: 20px; /* Espaçamento entre os quadrados */
+}
+
+/* #dest1 {
+
+}
+
+#dest2 {
+
+}
+
+#dest3 {
+
+} */
+
+.quadradodest {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+/* Outros */
+.outros {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 60px 4%;
+}
+
+.titleoutros {
+    text-align: center; /* Centraliza o texto do título */
+    margin-bottom: 10px; /* Adiciona um espaço abaixo do título */
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    color: #4b17d1;
+}
+
+.quadradosoutros-container {
+    display: flex;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    justify-content: center; /* Centraliza os quadrados na linha */
+    gap: 20px; /* Espaçamento entre os quadrados */
+}
+
+.quadradooutros {
+    position: relative; /* Adiciona posição relativa para alinhar o pseudo-elemento */
+    flex-basis: calc(25% - 20px); /* 25% menos o espaço entre os quadrados */
+    max-width: 300px; /* Largura máxima para garantir que os quadrados não fiquem muito largos */
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinha os itens na parte inferior */
+    align-items: flex-start;
+    padding: 20px;
+    text-align: left;
+    background-size: cover;
+    background-position: center;
+}
+
+.quadradooutros::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Cor de fundo semi-transparente */
+    border-radius: 10px;
+    z-index: -1; /* Coloca o pseudo-elemento atrás do conteúdo do quadrado */
+}
+
+.quadradooutros h1,
+.quadradooutros p {
+    color: #ffffff;
+    margin: 10px 0;
+    position: relative; /* Garante que o texto fique sobre o pseudo-elemento */
+    z-index: 2; /* Coloca o texto sobre o pseudo-elemento */
+}
+
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    .quadradooutros {
+        flex-basis: calc(33.33% - 20px); /* 33.33% menos o espaço entre os quadrados */
+    }
+}
+
+@media (max-width: 768px) {
+    .quadradooutros {
+        flex-basis: calc(50% - 20px); /* 50% menos o espaço entre os quadrados */
+    }
+}
+
+@media (max-width: 480px) {
+    .quadradooutros {
+        flex-basis: calc(100% - 20px); /* 100% menos o espaço entre os quadrados */
+        max-width: none; /* Remove a largura máxima para ocupar a largura total */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Tudo */
+
+
+
+
+
+.text-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Alinha verticalmente os textos no centro */
+}
+
+.text-container h1 {
+    margin: 0; /* Remove margens padrão */
+    font-family: 'Poppins', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: #4b17d1;
+}
+
+.text-container p {
+    margin: 5px 0 0 0; /* Margem superior para separar do título */
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    color: #777777;
+}
+
+
+.tudo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px; /* Espaçamento entre as colunas */
+    padding: 60px 4%;
+    justify-content: center; /* Centraliza a grade */
+}
+
+.noticia {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+    background-color: #ffffff; /* Cor de fundo branca para o contêiner */
+    margin-bottom: 20px;
+    width: 100%; /* Largura ajustável para caber na coluna */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.noticia img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+}
+
+.texto-noticia {
+    padding: 20px; /* Espaçamento interno para o texto */
+}
+
+
+/* Responsividade */
+@media (max-width: 1366px) {
+    .tudo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .tudo {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .tudo {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .tudo {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+
+
+
+
+/* Tamanho de tela: 1366px */
+@media (max-width: 1366px) {
+    .quadradodest {
+        width: 300px;
+        height: 400px;
+    }
+    .maior {
+        width: 600px;
+        height: 500px;
+    }
+    .canto {
+        width: 600px;
+        height: 250px;
+    }
+    .titledest, .titlehj, .titleoutros {
+        font-size: 30px;
+    }
+    .canto-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px; /* Espaçamento entre os elementos .canto */
+    }
+}
+
+/* Tamanho de tela: 1024px */
+@media (max-width: 1024px) {
+    .quadradodest {
+        width: 250px;
+        height: 350px;
+    }
+    .maior {
+        width: 500px;
+        height: 450px;
+    }
+    .canto {
+        width: 500px;
+        height: 200px;
+    }
+    .titledest, .titlehj, .titleoutros {
+        font-size: 28px;
+    }
+}
+
+/* Tamanho de tela: 768px */
+@media (max-width: 768px) {
+    .quadradodest {
+        width: 200px;
+        height: 300px;
+    }
+    .maior {
+        width: 100%;
+        height: auto;
+    }
+    .canto {
+        width: 100%;
+        height: auto;
+    }
+    .titledest, .titlehj, .titleoutros {
+        font-size: 25px;
+    }
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+/* Tamanho de tela: 480px */
+@media (max-width: 480px) {
+    .quadradodest {
+        width: 100%;
+        height: auto;
+    }
+    .maior {
+        width: 100%;
+        height: auto;
+    }
+    .canto {
+        width: 100%;
+        height: auto;
+    }
+    .titledest, .titlehj, .titleoutros {
+        font-size: 22px;
+        text-align: center;
+    }
+    .conteudo {
+        flex-direction: column;
+        align-items: center;
+    }
+    .noticia {
+        flex-direction: column;
+        align-items: center;
+    }
+    .noticia img {
+        width: 100%;
+        height: auto;
+    }
+    .text-container {
+        align-items: center;
+        text-align: center;
+    }
+}

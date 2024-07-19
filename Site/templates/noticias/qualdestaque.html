@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Exibir Tabela</title>
+</head>
+<body>
+    <h1>Tabela de Dados</h1>
+    <form action="/processar_ids" method="POST">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Título</th>
+                    <th>Resumo</th>
+                    <th>Tema</th>
+                    <th>Selecionar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in rows %}
+                <tr>
+                    <td>{{ row[0] }}</td>
+                    <td>{{ row[1] }}</td>
+                    <td>{{ row[2] }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td><input type="checkbox" name="ids_selecionados" value="{{ row[0] }}"></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <br>
+        <button type="submit">Salvar IDs Selecionados</button>
+    </form>
+</body>
+</html>

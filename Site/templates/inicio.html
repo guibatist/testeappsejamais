@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Cabeçalho -->
+     <link rel="stylesheet" href="static\css\footer.css">
+     <link rel="stylesheet" href="static\css\cabecalho.css">
+     <link rel="stylesheet" href="static\css\inicio.css">
+     <link rel="stylesheet" href="static\css\linkmachete.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seja Mais</title>
+</head>
+<body>
+    <script src="static\js\script.js"></script>
+    <!-- Cabeçalho -->
+    <script src="static\js\cabecalho.js"></script>
+    <header id="header">
+        <div class="container"> 
+            <div class="flex">
+                <a href="/" class="logo">SEJA<b>MAIS</b></a>
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="/">ÍNICIO</a></li>
+                        <li><a href="/portaldoembu">PORTAL DO EMBU</a></li>
+                        <li><a href="/quemsomos">QUEM SOMOS</a></li>
+                        <li><a href="/contato">CONTATO</a></li>
+                    </ul>
+                </nav>
+                {% if nome_usuario %}
+                <div class="btn-contato">
+                    <a href="/meuperfil"><button class="ASSINE">{{ nome_usuario }}</button></a>
+                </div>
+            {% else %}
+                <div class="btn-contato">
+                    <a href="/login"><button class="ASSINE">ENTRE</button></a>
+                </div>
+            {% endif %}
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div><!-- Flex -->
+        </div> <!-- Container -->
+    </header>
+
+
+<section class="nossoplano">
+    <div class="oplano">
+        <h1 class="content">O FUTURO DA NOSSA JUVENTUDE <br> COMEÇA AQUI</h1>
+        <p class="content">VENHA CONHECER O NOSSO PLANO PARA EMBU DAS ARTES </p>
+        <form action='botao_clicado' method="post">
+            <button type="submit" class="content">CLIQUE AQUI</button>
+        </form>
+    </div>
+</section>
+
+    <!-- Destaques -->
+<section class="destaques">
+    <div class="textos">
+        <h1 id="title">DESTAQUES</h1>
+        <a href="/portaldoembu"><h2>VEJA MAIS NOTÍCIAS</h2></a>
+    </div>
+
+
+    <!-- Quadrado 1 -->
+    <div class="quadrado" style="background-image: url('{{ linkdestaque1 }}');">
+        <a href="/abrenoticia/{{ titulodestaque1 }}" class="link-para-manchete" >
+            <div class="titulo">{{ titulodestaque1 }}</div>
+        </a>
+    </div>
+
+    <!-- Quadrado 2 -->
+    <div class="quadrado" style="background-image: url('{{ linkdestaque2 }}');">
+        <a href="/abrenoticia/{{ titulodestaque2 }}" class="link-para-manchete" onclick="handleClick(event)">
+            <div class="titulo">{{ titulodestaque2 }}</div>
+        </a>
+    </div>
+
+    <div class="outrasnoticias">
+        <h1>OUTRAS <br> NOTÍCIAS</h1>
+            <div class="coluna">
+                <a href="/abrenoticia/{{ titulodanoticiaoutros }}">{{ titulodanoticiaoutros }}</a>
+            </div>
+            <div class="coluna">
+                <a href="/abrenoticia/{{ titulodanoticiaoutros2 }}">{{ titulodanoticiaoutros2 }}</a>
+            </div>
+            <div class="coluna">
+                <a href="/abrenoticia/{{ titulodanoticiaoutros3 }}">{{ titulodanoticiaoutros3 }}</a>
+            </div>
+            <div class="coluna">
+                <a href="/abrenoticia/{{ titulodanoticiaoutros4 }}">{{ titulodanoticiaoutros4 }}</a>
+            </div>
+
+    </div>
+    <div class="ultimanoticia" style="background-image: url('{{ linkdestaque3 }}');">
+        <a href="/abrenoticia/{{ titulodestaque3 }}" class="link-para-manchete">    
+        <div class="textultimanoticia">{{ titulodestaque3 }}</div>
+    </a>
+    </div>
+</section>
+
+<section class="valores">
+    <h1 class="titleval">ACREDITAMOS</h1>
+    <div class="quadrados-container">
+        <div class="quadradoVAL">
+            <h1>DEMOCRACIA</h1>
+            <p>A democracia é a base para a oportunidade de todos. Nossa cidade necessita de um desenvolvimento democrático.</p>
+        </div>
+        <div class="quadradoVAL">
+            <h1>JUVENTUDE</h1>
+            <p>A juventude é a força vital de nossa comunidade, trazendo energia, inovação e perspectivas frescas para o desenvolvimento de nossa cidade.</p>
+        </div>
+        <div class="quadradoVAL">
+            <h1>PARTICIPAÇÃO</h1>
+            <p>A participação estudantil é crucial para uma democracia inclusiva. Envolvendo os estudantes nas decisões que moldam seu ambiente educacional, cultivamos líderes do amanhã e promovemos valores democráticos desde cedo.</p>
+
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2>Sobre Nós</h2>
+            <p>Somos a maior inspiração pro Jovem de Embu das Artes. A escola precisa de democracia.</p>
+        </div>
+        <div class="footer-section">
+            <h2>Navegação</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/portaldoembu">Portal do Embu</a></li>
+                <li><a href="/quemsomos">Quem Somos</a></li>
+                <li><a href="/contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Contato</h2>
+            <p>Email: sejamaias@gmail.com</p>
+            <p>Telefone: (00) 0000-0000</p>
+        </div>
+        <div class="footer-section">
+            <h2>Siga-nos</h2>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/oficialsejamais/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+
+</body>
+</html>

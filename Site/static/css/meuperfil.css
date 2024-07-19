@@ -1,0 +1,60 @@
+.container1 {
+  text-align: center; /* Centraliza o texto dentro da div */
+  padding: 20px;
+  margin-top: 30px;
+}
+
+.hello {
+  margin-top: 150px;
+}
+
+.quadradooutros {
+  width: 600px;
+  height: 300px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinha os itens no topo */
+  align-items: flex-start; /* Alinha os itens à esquerda */
+  padding: 20px;
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+.quadradosoutros-container {
+  display: flex;
+  flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+  justify-content: center; /* Centraliza os quadrados na linha */
+  gap: 20px; /* Espaçamento entre os quadrados */
+}
+
+.titleoutros {
+  text-align: center; /* Centraliza o texto do título */
+  margin-bottom: 10px; /* Adiciona um espaço abaixo do título */
+  font-family: 'Poppins', sans-serif;
+  font-size: 35px;
+  font-weight: 800;
+  color: #4b17d1;
+}
+
+
+.vagas {
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 1220px; /* largura máxima */
+  width: 100%; /* para garantir que não ultrapasse a largura máxima */
+  height: 200px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Alinha os itens no topo */
+  align-items: flex-start; /* Alinha os itens à esquerda */
+  padding: 20px;
+  text-align: left; /* Alinha o texto à esquerda */
+}
+
+

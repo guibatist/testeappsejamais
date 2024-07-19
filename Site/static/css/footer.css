@@ -1,0 +1,83 @@
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 25%; /* Por padrão, cada seção ocupa 25% da largura */
+    margin: 10px;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section .social-icons {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ddd;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ddd;
+}
+
+@media (max-width: 1024px) {
+    .footer-section {
+        flex-basis: 50%; /* Duas colunas por linha em telas até 1024px */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        flex-basis: 100%; /* Uma coluna por linha em telas até 768px */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section {
+        flex-basis: 100%; /* Uma coluna por linha em telas até 480px */
+        margin: 5px 0; /* Ajuste de margem para melhor espaçamento */
+    }
+}

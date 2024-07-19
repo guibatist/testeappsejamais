@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ titulo }}</title>
+    <link rel="stylesheet" href="static\css\footer.css">
+    <link rel="stylesheet" href="static\css\cabecalho.css">
+</head>
+<body>
+  <header id="header">
+    <div class="container"> 
+        <div class="flex">
+            <a href="/" class="logo">SEJA<b>MAIS</b></a>
+            <nav id="nav-menu">
+                <ul>
+                    <li><a href="/">ÍNICIO</a></li>
+                    <li><a href="/portaldoembu">PORTAL DO EMBU</a></li>
+                    <li><a href="/quemsomos">QUEM SOMOS</a></li>
+                    <li><a href="/contato">CONTATO</a></li>
+                </ul>
+            </nav>
+            {% if nome_usuario %}
+            <div class="btn-contato">
+                <a href="/meuperfil"><button class="ASSINE">{{ nome_usuario }}</button></a>
+            </div>
+        {% else %}
+            <div class="btn-contato">
+                <a href="/login"><button class="ASSINE">ENTRE</button></a>
+            </div>
+        {% endif %}
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div><!-- Flex -->
+    </div> <!-- Container -->
+</header>
+
+<main class="main">
+    <section class="headline">
+        <h1 style="text-transform: uppercase;">{{ tema }}</h1>
+    </section>
+    <section class="article">
+        <section class="cabecalho">
+            <h1>{{ titulo }}</h1>
+            <p>{{ resumo }}</p>
+            <p class="redator">Escrito por {{ jornalista }} - Embu das Artes - {{ data_publicacao }} às {{ hora_publicacao }}</p>
+        </section>
+        <img src="{{ link_imagem }}" alt="">
+        <p>{{ texto1 }}</p>
+        <p>{{ texto2 }}</p>
+        <h2>{{ titulo_paragrafo3 }}</h2>
+        <p>{{ texto_paragrafo3 }}</p>
+        <h2>{{ titulo_paragrafo4 }}</h2>
+        <p>{{ texto_paragrafo4 }}</p>
+    </section>
+    <section class="related-news">
+        <h3>{{ titulotema }}</h3>
+        <ul>
+            <li><a href="/abrenoticia/{{ tema1 }}">{{ tema1 }}</a></li>
+            <li><a href="/abrenoticia/{{ tema2 }}">{{ tema2 }}</a></li>
+            <li><a href="/abrenoticia/{{ tema3 }}">{{ tema3 }}</a></li>
+        </ul>
+    </section>
+</main>
+
+
+<section class="related-news">
+    <h3>OBRIGADO 😁</h3>
+</section>
+<footer class="footer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2>Sobre Nós</h2>
+            <p>Somos a maior inspiração pro Jovem de Embu das Artes. A escola precisa de democracia.</p>
+        </div>
+        <div class="footer-section">
+            <h2>Navegação</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/portaldoembu">Portal do Embu</a></li>
+                <li><a href="/quemsomos">Quem Somos</a></li>
+                <li><a href="/contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Contato</h2>
+            <p>Email: sejamaias@gmail.com</p>
+            <p>Telefone: (00) 0000-0000</p>
+        </div>
+        <div class="footer-section">
+            <h2>Siga-nos</h2>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/oficialsejamais/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+<style>
+
+
+
+
+        .main {
+            padding-top: 1020px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .headline {
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .headline h1 {
+            font-size: 2.5rem;
+            color: #591cf8;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .article {
+            background: #fff;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .article h1 {
+            font-size: 2rem;
+            color: #333;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .article p {
+            margin-bottom: 20px;
+            color: #555;
+        }
+
+        .article .redator {
+            color: #591cf8;
+            font-weight: 500;
+            margin-bottom: 30px;
+        }
+
+        .article img {
+            display: block;
+            margin: 20px auto;
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 10px;
+            object-fit: cover;
+        }
+
+        .article h2 {
+            margin-top: 30px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .related-news {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
+        .related-news h3 {
+            color: #591cf8;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .related-news ul {
+            list-style: none;
+        }
+
+        .related-news ul li {
+            margin-bottom: 10px;
+        }
+
+        .related-news ul li a {
+            color: #333;
+            text-decoration: none;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        .related-news ul li a:hover {
+            color: #591cf8;
+        }
+
+        @media (max-width: 768px) {
+            .article {
+                padding: 20px;
+            }
+
+            .article h1 {
+                font-size: 1.5rem;
+            }
+
+            .headline h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+
+    </style>
+
+<!-- Footer -->
+<style>
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-section {
+    flex: 1 1 25%; /* Por padrão, cada seção ocupa 25% da largura */
+    margin: 10px;
+}
+
+.footer-section h2 {
+    margin-bottom: 10px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section .social-icons {
+    margin: 0;
+    padding: 0;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin: 5px 0;
+}
+
+.footer-section ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #ddd;
+}
+
+.social-icons {
+    display: flex;
+    gap: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #ddd;
+}
+
+@media (max-width: 1024px) {
+    .footer-section {
+        flex-basis: 50%; /* Duas colunas por linha em telas até 1024px */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-section {
+        flex-basis: 100%; /* Uma coluna por linha em telas até 768px */
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-section {
+        flex-basis: 100%; /* Uma coluna por linha em telas até 480px */
+        margin: 5px 0; /* Ajuste de margem para melhor espaçamento */
+    }
+}
+
+</style>
+
+<!-- Cabecalho -->
+<style>
+    
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+.separa {
+    margin-bottom: 70px;
+}
+body {
+    background-color: #fdfdfd;
+}
+
+
+
+/* Header */
+.container {
+	max-width: 1280px;
+	margin: auto;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.flex .logo {
+	color: #000000;
+	text-decoration: none;
+	font-size: 25px;
+}
+
+header {
+	width: 100%;
+	padding: 60px 4%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	transition: .5s;
+	height: 90px;
+    background-color: #fff;
+	padding: 20px 4%;
+	box-shadow:  0px 4px rgba(0, 0, 0, 0.10);
+	z-index: 1000;
+    padding-bottom: 50px;
+
+}
+
+header i {
+	font-size: 30px;
+	color: #000000;
+}
+
+header ul {
+	list-style-type: none;
+}
+
+header ul li {
+	display: inline-block;
+	margin: 0 40px;
+}
+
+header ul li a {
+	color: #000000;
+	text-decoration: none;
+}
+
+.ASSINE {
+	width: 120px;
+	height: 40px;
+	border: 0;
+	border-radius: 35px;
+	background-color: #64e8ff;
+	color: #fff;
+	cursor: pointer;
+	transition: .2s;
+}
+
+.banner {
+    height: calc(100vh - 20px); /* Define a altura do banner menos 20 pixels */
+    margin-bottom: -20px;
+	background-image: url(https://wallpapercave.com/wp/wp12488812.png);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.banner h1 {
+	font-size: 4em;
+	color: #fff;
+}
+
+.banner h1 span {
+	color: #64e8ff;
+}
+
+/* Respons. */
+@media screen and (max-width: 768px) {
+	.flex {
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	header ul {
+		display: none;
+	}
+
+	.hamburger {
+		display: block;
+		cursor: pointer;
+	}
+
+	.hamburger span {
+		display: block;
+		width: 25px;
+		height: 3px;
+		background-color: #000;
+		margin: 5px 0;
+	}
+
+	#nav-menu.active ul,
+	#nav-menu.active .btn-contato {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		text-align: center;
+		padding: 10px 0;
+		background-color: #fff;
+		position: absolute;
+		top: 90px;
+		left: 0;
+		right: 0;
+		box-shadow: 0px 4px rgba(0, 0, 0, 0.1);
+		z-index: 999;
+	}
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('nav-menu');
+
+    hamburger.addEventListener('click', function() {
+        navMenu.classList.toggle('active');
+    });
+});
+
+</script>
+</body>
+</html>

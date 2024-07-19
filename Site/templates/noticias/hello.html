@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Criação de Notícias</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        label {
+            margin: 10px 0 5px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        textarea,
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        textarea {
+            resize: vertical;
+        }
+        button {
+            padding: 15px;
+            background-color: #4CAF50;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Criação de Notícias</h1>
+        <form id="newsForm" method="POST" action="/newscreate">
+            <label for="journalist">Jornalista</label>
+            <select id="journalist" name="journalist" required>
+                <option value="">Selecione um jornalista</option>
+                <option value="Guilherme Araujo">Guilherme Araujo</option>
+                <option value="Eduardo">Eduardo</option>
+                <option value="Juliana">Juliana</option>
+            </select>
+            
+            <label for="theme">Tema</label>
+            <select id="theme" name="theme" required>
+                <option value="">Selecione um tema</option>
+                <option value="Política">Política</option>
+                <option value="Economia">Economia</option>
+                <option value="Atualidade">Atualidade</option>
+                <option value="Cultura">Cultura</option>
+                <option value="Esporte">Esporte</option>
+                <option value="Saude">Saúde</option>
+                <option value="Educacao">Educação</option>
+                <option value="MeioAmbiente">Meio Ambiente</option>
+                <option value="Tecnologia">Tecnologia</option>
+                <option value="Entretenimento">Entretenimento</option>
+                <option value="Mundo">Mundo</option>
+                <option value="Ciencia">Ciência</option>
+                <option value="Religiao">Religião</option>
+                <option value="Crime e Justica">Crime e Justiça</option>
+                <option value="Estilo de Vida">Estilo de Vida</option>
+                <option value="Historia">História</option>
+                <option value="EventosLocais">Eventos Locais</option>
+                <option value="Diversidade e Inclusao">Diversidade e Inclusão</option>
+                <option value="Educacao Financeira">Educação Financeira</option>
+            </select>
+            
+            <label for="title">Título da Notícia</label>
+            <input type="text" id="title" name="title" required>
+            
+            <label for="summary">Resumo</label>
+            <textarea id="summary" name="summary" rows="4" required></textarea>
+            
+            <label for="imagem">Link da Imagem</label>
+            <input type="text" id="imagem" name="imagem" required>
+            
+            <label for="text1">Texto 1</label>
+            <textarea id="text1" name="text1" rows="6" required></textarea>
+            
+            <label for="text2">Texto 2</label>
+            <textarea id="text2" name="text2" rows="6" required></textarea>
+
+            <div id="additionalParagraphs"></div>
+
+            <button type="button" id="addParagraphBtn">Mais um parágrafo</button>
+            <button type="submit">Criar Notícia</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            let paragraphCount = 0;
+            const maxParagraphs = 2;
+            const addParagraphBtn = document.getElementById('addParagraphBtn');
+            const additionalParagraphs = document.getElementById('additionalParagraphs');
+
+            addParagraphBtn.addEventListener('click', () => {
+                if (paragraphCount < maxParagraphs) {
+                    paragraphCount++;
+                    
+                    const paragraphDiv = document.createElement('div');
+                    paragraphDiv.classList.add('paragraph');
+                    
+                    const paragraphTitleLabel = document.createElement('label');
+                    paragraphTitleLabel.textContent = `Título do Parágrafo ${paragraphCount + 2}`;
+                    
+                    const paragraphTitleInput = document.createElement('input');
+                    paragraphTitleInput.type = 'text';
+                    paragraphTitleInput.name = `title_paragraph_${paragraphCount + 2}`;
+                    paragraphTitleInput.required = true;
+                    
+                    const paragraphTextLabel = document.createElement('label');
+                    paragraphTextLabel.textContent = `Texto do Parágrafo ${paragraphCount + 2}`;
+                    
+                    const paragraphTextInput = document.createElement('textarea');
+                    paragraphTextInput.name = `text_paragraph_${paragraphCount + 2}`;
+                    paragraphTextInput.rows = 6;
+                    paragraphTextInput.required = true;
+                    
+                    const removeParagraphBtn = document.createElement('button');
+                    removeParagraphBtn.type = 'button';
+                    removeParagraphBtn.textContent = 'Remover Parágrafo';
+                    removeParagraphBtn.addEventListener('click', () => {
+                        paragraphDiv.remove();
+                        paragraphCount--;
+                        addParagraphBtn.style.display = 'inline-block';
+                    });
+                    
+                    paragraphDiv.appendChild(paragraphTitleLabel);
+                    paragraphDiv.appendChild(paragraphTitleInput);
+                    paragraphDiv.appendChild(paragraphTextLabel);
+                    paragraphDiv.appendChild(paragraphTextInput);
+                    paragraphDiv.appendChild(removeParagraphBtn);
+                    
+                    additionalParagraphs.appendChild(paragraphDiv);
+                    
+                    if (paragraphCount === maxParagraphs) {
+                        addParagraphBtn.style.display = 'none';
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Styles -->
+     <link rel="stylesheet" href="static\css\portaldoembu.css">
+    <link rel="stylesheet" href="static\css\cabecalho.css">
+    <link rel="stylesheet" href="static\css\footer.css">
+    <link rel="stylesheet" href="static\css\linkmachete.css">
+    <title>Seja Mais</title>
+</head>
+<body>
+    <script src="static\js\script.js"></script>
+    <!-- Cabeçalho -->
+    <script src="static\js\cabecalho.js"></script>
+    <header id="header">
+        <div class="container"> 
+            <div class="flex">
+                <a href="/" class="logo">SEJA<b>MAIS</b></a>
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="/">ÍNICIO</a></li>
+                        <li><a href="/portaldoembu">PORTAL DO EMBU</a></li>
+                        <li><a href="/quemsomos">QUEM SOMOS</a></li>
+                        <li><a href="/contato">CONTATO</a></li>
+                    </ul>
+                </nav>
+                {% if nome_usuario %}
+                <div class="btn-contato">
+                    <a href="/meuperfil"><button class="ASSINE">{{ nome_usuario }}</button></a>
+                </div>
+            {% else %}
+                <div class="btn-contato">
+                    <a href="/login"><button class="ASSINE">ENTRE</button></a>
+                </div>
+            {% endif %}
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div><!-- Flex -->
+        </div> <!-- Container -->
+    </header>
+
+<!-- Noticias de Destaques -->
+<section class="destaques">
+    <h1 class="titledest">NOTÍCIAS DE DESTAQUES</h1>
+    <div class="quadrados-container">
+        <div class="quadradodest" id="dest1" style="background-image: url('{{ linkdestaque1 }}');">
+            <a href="/abrenoticia/{{ titulodestaque1 }}" class="link-para-manchete">
+                <h1>{{ temadestaque1 }}</h1> <!-- Tema -->
+                <p>{{ titulodestaque1 }}</p>
+            </a>
+        </div>
+        <div class="quadradodest" id="dest2" style="background-image: url('{{ linkdestaque2 }}');">
+            <a href="/abrenoticia/{{ titulodestaque2 }}" class="link-para-manchete">
+            <h1>{{ temadestaque2 }}</h1> <!-- Tema -->
+            <p>{{ titulodestaque2 }}</p>
+            </a>
+        </div>
+        <div class="quadradodest" id="dest3" style="background-image: url('{{ linkdestaque3 }}');">
+            <a href="/abrenoticia/{{ titulodestaque3 }}" class="link-para-manchete">
+            <h1>{{ temadestaque3 }}</h1> <!-- Tema -->
+            <p>{{ titulodestaque3 }}</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="hoje">
+    <h1 class="titlehj">HOJE</h1>
+    <div class="conteudo">
+        <div class="maior" style="background-image: url('{{ linkdanoticia }}');">
+            <a href="/abrenoticia/{{ titulodanoticia }}" class="link-para-manchete" >
+            <h3>{{ temadanoticia }}</h3>
+            <h1>{{ titulodanoticia }}</h1>
+            <p>{{ resumodanoticia }}</p>
+            </a>
+        </div>
+        <div class="canto-container">
+            <div class="canto" style="background-image: url('{{ linkdanoticia2 }}');">
+                <a href="/abrenoticia/{{ titulodanoticia2 }}" class="link-para-manchete">
+                <h3>{{ temadanoticia2 }}</h3>
+                <h1>{{ titulodanoticia2 }}</h1>
+                <p>{{ resumodanoticia2 }}</p>    
+                </a>
+            </div>
+            <div class="canto" style="background-image: url('{{ linkdanoticia3 }}');">
+                <a href="/abrenoticia/{{ titulodanoticia3 }}" class="link-para-manchete">
+                <h3>{{ temadanoticia3 }}</h3>
+                <h1>{{ titulodanoticia3 }}</h1>
+                <p>{{ resumodanoticia3 }}</p>    
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="outros">
+    <h1 class="titleoutros">OUTROS</h1>
+    <div class="quadradosoutros-container">
+        <div class="quadradooutros" style="background-image: url('{{ linkdanoticiaoutros }}');">
+            <a href="/abrenoticia/{{ titulodanoticiaoutros }}" class="link-para-manchete">
+            <h1>{{ temadanoticiaoutros }}</h1>
+            <p>{{ titulodanoticiaoutros }}</p>
+            </a>
+        </div>
+        <div class="quadradooutros" style="background-image: url('{{ linkdanoticiaoutros2 }}');">
+            <a href="/abrenoticia/{{ titulodanoticiaoutros2 }}" class="link-para-manchete">
+            <h1>{{ temadanoticiaoutros2 }}</h1>
+            <p>{{ titulodanoticiaoutros2 }}</p>
+            </a>
+        </div>
+        <div class="quadradooutros" style="background-image: url('{{ linkdanoticiaoutros3 }}');">
+            <a href="/abrenoticia/{{ titulodanoticiaoutros3 }}" class="link-para-manchete">
+            <h1>{{ temadanoticiaoutros3 }}</h1>
+            <p>{{ titulodanoticiaoutros3 }}</p>
+            </a>
+        </div>
+        <div class="quadradooutros" style="background-image: url('{{ linkdanoticiaoutros4 }}');">
+            <a href="/abrenoticia/{{ titulodanoticiaoutros4 }}" class="link-para-manchete">
+            <h1>{{ temadanoticiaoutros4 }}</h1>
+            <p>{{ titulodanoticiaoutros4 }}</p>
+            </a>
+        </div>
+        <div class="quadradooutros" style="background-image: url('{{ linkdanoticiaoutros5 }}');">
+            <a href="/abrenoticia/{{ titulodanoticiaoutros5 }}" class="link-para-manchete">
+            <h1>{{ temadanoticiaoutros5 }}</h1>
+            <p>{{ titulodanoticiaoutros5 }}</p>
+            </a>
+        </div>
+        <div class="quadradooutros" style="background-image: url('{{ linkdanoticiaoutros6 }}');">
+            <a href="/abrenoticia/{{ titulodanoticiaoutros6 }}" class="link-para-manchete">
+            <h1>{{ temadanoticiaoutros6 }}</h1>
+            <p>{{ titulodanoticiaoutros6 }}</p>
+            </a>
+        </div>
+        <div class="quadradooutros" style="background-image: url('{{ linkdanoticiaoutros7 }}');">
+            <a href="/abrenoticia/{{ titulodanoticiaoutros7 }}" class="link-para-manchete">
+            <h1>{{ temadanoticiaoutros7 }}</h1>
+            <p>{{ titulodanoticiaoutros7 }}</p>
+            </a>
+        </div>
+        <div class="quadradooutros" style="background-image: url('{{ linkdanoticiaoutros8 }}');">
+            <a href="/abrenoticia/{{ titulodanoticiaoutros8 }}" class="link-para-manchete">
+            <h1>{{ temadanoticiaoutros8 }}</h1>
+            <p>{{ titulodanoticiaoutros8 }}</p>
+            </a>
+        </div>
+    </div>
+</section>
+
+<section class="tudo">
+    {% for noticia in todas_noticias %}
+    <div class="noticia">
+        <a href="/abrenoticia/{{ noticia[3] }}" class="link-para-manchete">
+        <img src="{{ noticia[1] }}" alt="">
+        <div class="texto-noticia">
+            <h1 style="color: black;">{{ noticia[3] }}</h1>
+            <p style="color: black;">Adicionado em {{ noticia[4] }} às {{ noticia[5] }}</p>
+        </div>
+    </a>
+    </div>
+    {% endfor %}
+</section>
+
+<footer class="footer">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <div class="footer-container">
+        <div class="footer-section">
+            <h2>Sobre Nós</h2>
+            <p>Somos a maior inspiração pro Jovem de Embu das Artes. A escola precisa de democracia.</p>
+        </div>
+        <div class="footer-section">
+            <h2>Navegação</h2>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/portaldoembu">Portal do Embu</a></li>
+                <li><a href="/quemsomos">Quem Somos</a></li>
+                <li><a href="/contato">Contato</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h2>Contato</h2>
+            <p>Email: sejamaias@gmail.com</p>
+            <p>Telefone: (00) 0000-0000</p>
+        </div>
+        <div class="footer-section">
+            <h2>Siga-nos</h2>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.instagram.com/oficialsejamais/"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

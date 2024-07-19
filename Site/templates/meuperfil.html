@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static\css\footer.css">
+    <link rel="stylesheet" href="static\css\cabecalho.css">
+    <link rel="stylesheet" href="static\css\meuperfil.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Seja Mais</title>
+</head>
+<body>
+    <script src="static\js\cabecalho.js"></script>
+    <header id="header" >
+        <div class="container"> 
+            <div class="flex">
+                <a href="/" class="logo">SEJA<b>MAIS</b></a>
+                <nav id="nav-menu">
+                    <ul>
+                        <li><a href="/">ÍNICIO</a></li>
+                        <li><a href="/portaldoembu">PORTAL DO EMBU</a></li>
+                        <li><a href="/quemsomos">QUEM SOMOS</a></li>
+                        <li><a href="/contato">CONTATO</a></li>
+                    </ul>
+                </nav>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div><!-- Flex -->
+        </div> <!-- Container -->
+    </header>
+
+    <div class="hello">
+        <h1 class="titleoutros" style="text-transform: uppercase;">Olá, {{ nome_usuario }}</h1>
+        <div class="quadradosoutros-container">
+            <div class="quadradooutros">
+                <h1>VOCÊ SABIA?</h1>
+                <p>Nós temos um canal no <a href="https://www.youtube.com/" style="text-decoration: none;">Youtube</a>! Estamos entrevistando todos os candidatos políticos para manter você bem informado sobre a política da nossa cidade.</p>
+            </div>
+            <div class="quadradooutros">
+                <h1>NOS CONECTE COM VOCÊ</h1>
+                <p>Tem uma chapa ou deseja estar ativo nas decisões da sua escola? Converse conosco que te ajudaremos.</p>
+                <a href="">
+                    <button style="font-family: 'Poppins', sans-serif;
+                        font-size: 12px;
+                        font-weight: 500;
+                        color: #fff;
+                        background-color: #591cf8;
+                        border: none;
+                        padding: 10px 20px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        margin-top: 20px;">ENVIE MENSAGEM</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="vagas">
+        <h1>VENHA VER AS VAGAS DA SEMANA</h1>
+        <p>O primeiro passo para sua jornada adulta e desenvolvimento trabalhista é trabalhar. <br><b>E nós vamos te ajudar com isso!!</b></p>
+        <a href="/vagasdeemprego">
+            <button style="font-family: 'Poppins', sans-serif;
+                font-size: 12px;
+                font-weight: 500;
+                color: #fff;
+                background-color: #591cf8;
+                border: none;
+                padding: 10px 20px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-top: 20px;">VER VAGAS</button>
+        </a>
+    </div>
+
+    <div class="container1">
+        <p>Clique no botão abaixo para desconectar:</p>
+        <form action="/logout" method="post">
+            <button type="submit">Desconectar</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <div class="footer-container">
+            <div class="footer-section">
+                <h2>Sobre Nós</h2>
+                <p>Somos a maior inspiração pro Jovem de Embu das Artes. A escola precisa de democracia.</p>
+            </div>
+            <div class="footer-section">
+                <h2>Navegação</h2>
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/portaldoembu">Portal do Embu</a></li>
+                    <li><a href="/quemsomos">Quem Somos</a></li>
+                    <li><a href="/contato">Contato</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h2>Contato</h2>
+                <p>Email: sejamaias@gmail.com</p>
+                <p>Telefone: (00) 0000-0000</p>
+            </div>
+            <div class="footer-section">
+                <h2>Siga-nos</h2>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="https://www.instagram.com/oficialsejamais/"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

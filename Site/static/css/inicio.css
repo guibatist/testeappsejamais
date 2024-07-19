@@ -1,0 +1,476 @@
+   /* Noticias */
+   .destaques {
+	margin-top: 15px;
+	padding: 60px 4%;
+}
+
+.textos {
+    display: flex; /* Usar Flexbox */
+    justify-content: space-between; /* Distribui os itens com espaço igual entre eles */
+    align-items: center; /* Alinha verticalmente ao centro */
+    width: 99%; /* Garante que a largura ocupe todo o espaço disponível */
+    padding: 10px; /* Adiciona espaçamento interno */
+}
+
+.textos h2 {
+	font-family: 'Poppins', sans-serif;
+	font-size: 20px;
+}
+
+.textos a {
+	text-decoration: none;
+	color: #64e8ff;
+}
+
+.destaques #title {
+	font-size: 30px;
+	margin-bottom: 10px;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 700;
+	color: #591cf8;
+}
+
+
+.quadrado {
+    width: 500px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    margin-right: 20px;
+    position: relative; /* Mantém os elementos filhos posicionados em relação ao quadrado */
+    padding: 10px;
+    z-index: 1; /* Z-index menor para os quadrados */
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.quadrado::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
+    border-radius: 10px; /* Garante que o pseudo-elemento tenha as mesmas bordas arredondadas */
+    z-index: 0; /* Coloca a camada atrás do texto */
+}
+
+.titulo {
+    padding: 10px; /* Preenchimento ao redor do texto */
+    border-radius: 5px; /* Bordas arredondadas para o título */
+    position: absolute;
+	font-family: 'Poppins', sans-serif;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 600;
+    bottom: 10px;
+    left: 10px;
+}
+
+.outrasnoticias {
+    width: 388px;
+    height: 750px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    position: relative; /* Mantém os elementos filhos posicionados em relação ao quadrado */
+    padding: 10px;
+    z-index: 1; /* Z-index menor para os quadrados */
+    vertical-align: top; /* Garante que os elementos fiquem alinhados ao topo */
+}
+
+.outrasnoticias h1 {
+	text-align: center;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: normal;
+	margin-bottom: 10px;
+}
+
+
+
+.coluna {
+	cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: red;
+    margin-bottom: 40px;
+    display: flex; /* Adiciona flexbox para alinhar itens em linha */
+    align-items: center; /* Centraliza os itens verticalmente */
+    gap: 10px; /* Espaço entre o link e a imagem */
+	padding-top: 10px;
+	border-top: 1px solid #ccc;
+}
+
+.coluna a {
+	text-decoration: none;
+	color: black;
+	flex-grow: 1;
+}
+
+.coluna img {
+    width: 100px; /* Largura fixa */
+    height: 100px; /* Altura fixa */
+    flex-shrink: 0; /* Impede que a imagem encolha */
+}
+
+/* Patrocinio */
+.ultimanoticia {
+	width: 1025px;
+    height: 230px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    position: relative; /* Mantém os elementos filhos posicionados em relação ao quadrado */
+    padding: 10px;
+    z-index: 1; /* Z-index menor para os quadrados */
+    vertical-align: top; /* Garante que os elementos fiquem alinhados ao topo */
+	margin-top: -230px;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	overflow: hidden;
+	cursor: pointer;
+}
+
+.ultimanoticia::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3); /* Ajuste a opacidade conforme necessário */
+    border-radius: 10px; /* Garante que o pseudo-elemento tenha as mesmas bordas arredondadas */
+    z-index: 0; /* Coloca a camada atrás do texto */
+}
+
+.textultimanoticia {
+	padding: 10px; /* Preenchimento ao redor do texto */
+    border-radius: 5px; /* Bordas arredondadas para o título */
+    position: absolute;
+	font-family: 'Poppins', sans-serif;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 600;
+    bottom: 10px;
+    left: 10px;
+}
+
+
+/* Estilos Gerais para Telas Menores */
+@media only screen and (max-width: 1024px) {
+    .destaques {
+        padding: 30px 2%; /* Reduz o padding */
+    }
+
+	.ultimanoticia {
+        margin-top: 20px; /* Adiciona espaço acima da .ultimanoticia */
+    }
+
+    .quadrado, .ultimanoticia, .outrasnoticias {
+        width: 100%; /* Ocupa a largura total */
+        margin-right: 0; /* Remove margem direita */
+    }
+
+    .quadrado {
+        margin-bottom: 20px; /* Adiciona espaço abaixo dos quadrados */
+    }
+}
+
+/* Estilos para Tablets */
+@media only screen and (max-width: 768px) {
+    .textos {
+        flex-direction: column; /* Os itens se alinham em coluna */
+        text-align: center; /* Centraliza o texto */
+    }
+
+	.ultimanoticia {
+        margin-top: 30px; /* Aumenta o espaço em tablets para clareza visual */
+    }
+
+    .textos h1, .textos h2 {
+        margin-bottom: 10px; /* Adiciona margem abaixo dos títulos */
+    }
+
+    .outrasnoticias {
+        height: auto; /* Altura automática para acomodar conteúdo */
+    }
+
+    .coluna {
+        flex-direction: column; /* Imagem e texto em colunas separadas */
+        align-items: start; /* Alinha itens à esquerda */
+    }
+
+    .coluna img {
+        width: 100%; /* Imagem ocupa toda a largura */
+        height: auto; /* Altura automática para manter a proporção */
+    }
+}
+
+/* Estilos para Smartphones */
+@media only screen and (max-width: 480px) {
+    .destaques {
+        padding: 20px 1%; /* Ainda menor padding */
+    }
+
+	.ultimanoticia {
+        margin-top: 40px; /* Aumenta ainda mais o espaço em smartphones */
+    }
+
+    .textultimanoticia, .titulo {
+        font-size: 20px; /* Tamanho de fonte reduzido para o texto */
+    }
+}
+
+
+
+
+/* Nosso Plano */
+.nossoplano {
+    margin-top: 100px;
+    padding: 60px 4%;
+}
+
+.content {
+    position: relative;
+    z-index: 1; /* Coloca o conteúdo acima da camada de sombra */
+}
+
+
+.oplano {
+    width: 1435px;
+    height: 500px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Alinha os itens na parte inferior */
+    align-items: flex-start; /* Alinha os itens à esquerda */
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+
+
+    background-image: url('https://catracalivre.com.br/wp-content/uploads/2022/12/embu-das-artes-rua-scaled.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative; /* Posiciona o pseudo-elemento ::before relativo a .oplano */
+}
+
+
+.oplano::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ajuste a opacidade conforme necessário */
+    border-radius: 10px; /* Garante que o pseudo-elemento tenha as mesmas bordas arredondadas */
+    z-index: 1; /* Coloca a camada atrás do texto */
+}
+
+.oplano h1 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+}
+.oplano p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 10px 0;
+}
+.oplano button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    color: #fff;
+    background-color: #591cf8;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.oplano button:hover {
+    background-color: #4b17d1;
+}
+
+.button-link {
+    text-decoration: none; /* Remove qualquer sublinhado do link */
+    color: inherit; /* Herda a cor do texto do ambiente */
+}
+
+
+
+/* Valores */
+.valores {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza horizontalmente */
+    padding: 60px 4%;
+}
+
+.titleval {
+    text-align: center; /* Centraliza o texto do título */
+    margin-bottom: 10px; /* Adiciona um espaço abaixo do título */
+    
+    font-family: 'Poppins', sans-serif;
+    font-size: 35px;
+    font-weight: 800;
+    color: #4b17d1;
+}
+
+.quadradoVAL {
+    width: 300px;
+    height: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Alinha os itens no topo */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    padding: 20px;
+    margin: 10px; /* Adiciona espaço entre os quadrados */
+    text-align: center; /* Centraliza o texto dentro dos quadrados */
+}
+
+.valores .quadrados-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Centraliza os quadrados na linha */
+    gap: 20px; /* Espaçamento entre os quadrados */
+}
+
+.quadradoVAL {
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+/* Responsividade */
+/* Estilos Gerais para Telas Menores */
+@media only screen and (max-width: 1366px) {
+    .destaques {
+        padding: 50px 3%;
+    }
+
+    .oplano {
+        width: 100%;
+    }
+
+    .quadrado {
+        width: 400px;
+        height: 400px;
+        margin-bottom: 0;
+    }
+
+    .ultimanoticia {
+        width: 825px;
+        height: 230px;
+        
+    }
+}
+
+@media only screen and (max-width: 1024px) {
+    .destaques {
+        padding: 30px 2%;
+    }
+
+    .ultimanoticia {
+        margin-top: 20px;
+    }
+
+    .quadrado, .ultimanoticia, .outrasnoticias {
+        width: 100%;
+        margin-right: 0;
+    }
+
+    .quadrado {
+        margin-bottom: 20px;
+    }
+
+    .oplano {
+        width: 100%;
+        height: 400px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .textos {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .ultimanoticia {
+        margin-top: 30px;
+    }
+
+    .textos h1, .textos h2 {
+        margin-bottom: 10px;
+    }
+
+    .outrasnoticias {
+        height: auto;
+    }
+
+    .coluna {
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .coluna img {
+        width: 100%;
+        height: auto;
+    }
+
+    .oplano {
+        height: 300px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .destaques {
+        padding: 20px 1%;
+    }
+
+    .ultimanoticia {
+        margin-top: 40px;
+    }
+
+    .textultimanoticia, .titulo {
+        font-size: 20px;
+    }
+
+    .oplano {
+        height: 250px;
+    }
+}

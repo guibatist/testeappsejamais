@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes da Vaga - {{ titulo }}</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="vaga">
+            <h1 class="titulo" style="text-transform: uppercase;">{{ titulo }}</h1>
+            <div class="info">
+                <p class="area"><strong></strong> {{ areadavaga }}</p>
+                
+                <h2><strong>Resumo da Vaga:</strong></h2>
+                <p>{{ resumovaga }}</p>
+
+                <h2><strong>Empresa:</strong></h2>
+                <p>{{ empresavaga }}</p>
+
+                <h2><strong>Local:</strong></h2>
+                <p>{{ localvaga }}</p>
+
+                <h2><strong>Escolaridade Mínima:</strong></h2>
+                <p>{{ escominvaga }}</p>
+
+                <h2><strong>Idade Mínima:</strong></h2>
+                <p>{{ idadevaga }}</p>
+
+                <h2><strong>Tipo de Contrato:</strong></h2>
+                <p>{{ tipovaga }}</p>
+
+                <p class="observacao">
+                    Gostou da vaga? Para enviar é simples! <br>
+                    <a a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox?compose=new" target="_blank">Envie um email para {{ emailvaga }}</a> com o título <b>{{ formatted_titulo }}</b>, anexando seu currículo no assunto do email.
+                </p>
+            </div>
+        </div>
+        <a class="voltar" href="/vagasdeemprego">Voltar</a>
+    </div>
+    <style>
+        /* Reset básico */
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+
+        .vaga {
+            padding: 20px;
+        }
+
+        .area {
+            text-align: center;
+        }
+
+        .voltar {
+            text-decoration: none; 
+            text-align: center;
+            display: block; /* Alterado para block para ocupar toda a largura da div */
+            margin: 0 auto; /* Margem automática para centralizar */
+            width: fit-content; /* Ajusta a largura conforme o conteúdo */
+        }
+
+        .titulo {
+            font-size: 24px;
+            color: #4b17d1;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+
+        .info {
+            margin-bottom: 20px;
+        }
+
+        .info h2 {
+            margin-bottom: 5px; /* Ajuste aqui para reduzir a margem inferior dos h2 */
+        }
+
+        .info p {
+            margin-bottom: 10px;
+        }
+
+        .info strong {
+            font-weight: bold;
+        }
+
+        .observacao {
+            font-style: italic;
+            color: #777;
+        }
+
+    </style>
+</body>
+</html>
